@@ -11,13 +11,14 @@ class CalculationsController < ApplicationController
     # ================================================================================
 
 
-    @word_count = "Replace this string with your answer."
 
-    @character_count_with_spaces = "Replace this string with your answer."
+    @word_count = @text.split(" ").length
 
-    @character_count_without_spaces = "Replace this string with your answer."
+    @character_count_with_spaces = @text.length
 
-    @occurrences = "Replace this string with your answer."
+    @character_count_without_spaces = @text.length-@text.count(" ")
+
+    @occurrences = @text.split(" ").count(@special_word.capitalize)+@text.split(" ").count(@special_word)
 
     # ================================================================================
     # Your code goes above.
