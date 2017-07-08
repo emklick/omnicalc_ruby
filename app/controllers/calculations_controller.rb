@@ -20,7 +20,7 @@ class CalculationsController < ApplicationController
 
     punctuation = @text.chomp(".")
     
-    downcased_words = punctuationss.downcase.split(" ")
+    downcased_words = punctuation.downcase.split(" ")
     
     downcased_special = @special_word.downcase
 
@@ -70,12 +70,12 @@ class CalculationsController < ApplicationController
     #   number of seconds as a result.
     # ================================================================================
 
-    @seconds = (@ending-@starting)*24*60*60
-    @minutes = "Replace this string with your answer."
-    @hours = "Replace this string with your answer."
-    @days = "Replace this string with your answer."
-    @weeks = "Replace this string with your answer."
-    @years = "Replace this string with your answer."
+    @seconds = @ending-@starting
+    @minutes = @seconds/60
+    @hours = @minutes/60
+    @days = @hours/24
+    @weeks = @days/7
+    @years = @weeks/52
 
     # ================================================================================
     # Your code goes above.
@@ -94,11 +94,11 @@ class CalculationsController < ApplicationController
 
     @sorted_numbers = "Replace this string with your answer."
 
-    @count = "Replace this string with your answer."
+    @count = @numbers.count(" ")
 
-    @minimum = "Replace this string with your answer."
+    @minimum = @numbers.min
 
-    @maximum = "Replace this string with your answer."
+    @maximum = @numbers.max
 
     @range = "Replace this string with your answer."
 

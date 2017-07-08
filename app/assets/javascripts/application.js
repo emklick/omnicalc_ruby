@@ -14,3 +14,12 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+
+//= require jquery
+//= require moment
+//= require bootstrap-datetimepicker
+
+$(function () {
+  $('.datetimepicker').datetimepicker();
+});
