@@ -18,7 +18,10 @@ class CalculationsController < ApplicationController
 
     @character_count_without_spaces = @text.length-@text.count(" ")
 
-    downcased_words = @text.downcase.split(" ")
+    punctuation = @text.chomp(".")
+    
+    downcased_words = punctuationss.downcase.split(" ")
+    
     downcased_special = @special_word.downcase
 
     @occurrences = downcased_words.count(downcased_special)
@@ -42,10 +45,10 @@ class CalculationsController < ApplicationController
     # The principal value the user input is in the decimal @principal.
     # ================================================================================
 
-  monthly_interest = ((@apr/12)/100)
+  monthly_interest = (@apr/12)/100
   number_of_monthly_payments = @years*-12
 
-    @monthly_payment = @principal*((monthly_interest)/(1-(1+monthly_interest)**(number_of_monthly_payments)))
+    @monthly_payment = @principal*(monthly_interest/(1-(1+monthly_interest)**number_of_monthly_payments))
 
     # ================================================================================
     # Your code goes above.
@@ -67,7 +70,7 @@ class CalculationsController < ApplicationController
     #   number of seconds as a result.
     # ================================================================================
 
-    @seconds = "Replace this string with your answer."
+    @seconds = (@ending-@starting)*24*60*60
     @minutes = "Replace this string with your answer."
     @hours = "Replace this string with your answer."
     @days = "Replace this string with your answer."
