@@ -76,22 +76,4 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 4.7.0'
 
-gem 'descriptive-statistics'
-
-gem 'variance', '~> 0.2.0'
-
-gem 'standard_deviation', '~> 1.0', '>= 1.0.3'
-
-gem 'mode', '~> 0.0.26'
-
-
-gem 'mean_median_mode', '~> 0.3.0'
-
-gem 'descriptive_statistics', '~> 2.5', '>= 2.5.1'
-
-gem 'quickstats', '~> 2.0'
-
-gem 'statsample', '~> 2.0', '>= 2.0.2'
-
-gem 'statistica', '~> 0.1.0'
 
