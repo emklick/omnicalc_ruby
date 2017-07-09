@@ -113,8 +113,10 @@ class CalculationsController < ApplicationController
     @variance = @numbers.variance
 
     @standard_deviation = @numbers.standard_deviation
+    
+    occurance = @sorted_numbers
 
-    @mode = @numbers.mode
+    @mode = @sorted_numbers-@numbers
 
     # ================================================================================
     # Your code goes above.
