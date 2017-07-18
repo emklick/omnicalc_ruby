@@ -110,13 +110,17 @@ class CalculationsController < ApplicationController
 
     @mean = @sum/@count
 
-    @variance = @numbers.variance
+    @demeaned=@numbers.map { |i| i - @mean}
+    @squared = @demeaned.map { |i| i**2}
+    @variance = @squared.sum / @count
 
-    @standard_deviation = @numbers.standard_deviation
-    
-    occurance = @sorted_numbers
+    @variance = @squared.sum / @count
 
-    @mode = @sorted_numbers-@numbers
+    @standard_deviation = Math.sqrt(@variance)
+
+    @mode_count = @numbers.map { |i| @numbers.count(i)}
+    @mode = @numbers[@mode_count.index(@mode_count.sort[@mode_count.count - 1])]
+
 
     # ================================================================================
     # Your code goes above.
